@@ -1,0 +1,35 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src=".\three\build\Three.js"></script>
+  <script src="VRRenderer.js"></script>
+  <script src = "main.js"></script>
+  <script language="javascript">
+  window.addEventListener("load", function() {
+    if (navigator.getVRDevices) {
+      navigator.getVRDevices().then(vrDeviceCallback);
+    } else if (navigator.mozGetVRDevices) {
+      navigator.mozGetVRDevices(vrDeviceCallback);
+    }
+  }, false);
+
+  window.addEventListener("keypress", function(e) {
+    if (e.charCode == 'f'.charCodeAt(0)) {
+      if (renderCanvas.mozRequestFullScreen) {
+        renderCanvas.mozRequestFullScreen({
+          vrDisplay: vrHMD
+        });
+      } else if (renderCanvas.webkitRequestFullscreen) {
+        renderCanvas.webkitRequestFullscreen({
+          vrDisplay: vrHMD,
+        });
+      }
+    }
+  }, false);
+  </script>
+</head>
+<body>
+  <canvas id="render-canvas"></canvas>
+  <div style="position: fixed; top: 8px; left: 8px; color: white">Hit the F key to engage VR rendering</div>
+</body>
+</html>
