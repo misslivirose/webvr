@@ -18,7 +18,7 @@
     }
 
     function initScene() {
-      camera = new THREE.PerspectiveCamera(60, 1920 / 800, 0.001, 10);
+      camera = new THREE.PerspectiveCamera(60, 1280 / 800, 0.001, 10);
       camera.position.z = 2;
       scene = new THREE.Scene();
       var geometry = new THREE.IcosahedronGeometry(1, 1);
@@ -33,7 +33,7 @@
         canvas: renderCanvas,
       });
       renderer.setClearColor(0x555555);
-      renderer.setSize(1920, 800, false);
+      renderer.setSize(1280, 800, false);
       vrrenderer = new THREE.VRRenderer(renderer, vrHMD);
     }
 
@@ -41,9 +41,5 @@
       requestAnimationFrame(render);
       mesh.rotation.y += 0.01;
       var state = vrHMDSensor.getState();
-      camera.quaternion.set(state.orientation.x,
-        state.orientation.y,
-        state.orientation.z,
-        state.orientation.w);
         vrrenderer.render(scene, camera);
       }
