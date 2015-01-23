@@ -1,6 +1,4 @@
-
-
-  function vrDeviceCallback(vrdevs) {
+    function vrDeviceCallback(vrdevs) {
     for (var i = 0; i < vrdevs.length; ++i) {
       if (vrdevs[i] instanceof HMDVRDevice) {
         vrHMD = vrdevs[i];
