@@ -15,7 +15,6 @@
       initScene();
       initRenderer();
       render();
-      console.log(vrdevs);
     }
 
     function initScene() {
