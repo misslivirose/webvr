@@ -1,6 +1,6 @@
     "use strict";
-
-    THREE.VRRenderer = function(renderer, hmd) {
+    
+   THREE.VRRenderer = function(renderer, hmd) {
 
     var self = this;
 
