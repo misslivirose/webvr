@@ -9,7 +9,8 @@
   <script src = "main.js"></script>
 
   <script language="javascript">
-  var renderCanvas;
+
+  var renderCanvas = document.getElementById("render-canvas");
   window.addEventListener("load", function() {
     if (navigator.getVRDevices) {
       navigator.getVRDevices().then(vrDeviceCallback);
