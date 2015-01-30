@@ -7,3 +7,5 @@ You will need the Firefox Nightly build or a WebVR-enabled version of Chromium f
 [Firefox Nightly](https://nightly.mozilla.org/) now has the WebVR API included in the builds, but this is only enabled for the desktop browser, and not mobile yet.
 
 [Chromium](https://drive.google.com/folderview?id=0BzudLt22BqGRbW9WTHMtOWMzNjQ)  doesn't have the WebVR API on all of the builds, but you can grab one from here that does. I'm using the December 17th version for testing, with plans to update when newer builds come out.
+
+VRRender.js was initially cloned from https://github.com/wwwtyro/three-vr-renderer
