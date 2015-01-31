@@ -1,6 +1,8 @@
 # webvr
 This is a sample project for experimenting with Three.js and rendering sites with HMDs through the WebVR API.
 
+[Part 1: Initial Project Overview Blog Post](http://livierickson.com/2015/01/24/experiments-in-webvr-part-1/)
+
 ## Notes
 You will need the Firefox Nightly build or a WebVR-enabled version of Chromium for viewing demos; other browsers will just display a white screen as they do not have the navigator.getVRDevices functionality enabled.
 

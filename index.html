@@ -49,7 +49,10 @@
       initRenderer();
       render();
     }
-
+    /**
+    * Initialize a basic Three.JS scene. This is where you will draw the mesh
+    * components on the canvas and set up the camera.
+    **/
     function initScene() {
       camera = new THREE.PerspectiveCamera(60, 1280 / 800, 0.001, 10);
       camera.position.z = 2;
@@ -60,7 +63,10 @@
       scene.add(mesh);
       scene.add(camera);
     }
-
+    /**
+    * Initialize the VR renderer for the scene. This creates the WebGL canvas in
+    * the browser and uses the VRRenderer to display the scene side by side.
+    **/
     function initRenderer() {
       renderCanvas = document.getElementById("render-canvas");
       renderer = new THREE.WebGLRenderer({
@@ -71,22 +77,26 @@
       vrrenderer = new THREE.VRRenderer(renderer, vrHMD);
     }
 
+    /**
+    * Render the VR scene and change the camera in the scene to reflect the HMD
+    * tracking position (camera.quaternion.set). The camera is then passed with the
+    * Three.js scene as parameters to the VRRenderer, which handles the redrawing as
+    * the scene run.
+    **/
     function render() {
       requestAnimationFrame(render);
       mesh.rotation.y += 0.01;
       mesh.rotation.x += 0.01;
       var state = vrHMDSensor.getState();
-      /** TODO: Identify correct camera orientation **/
       camera.quaternion.set(state.orientation.x,
       state.orientation.y,
       state.orientation.z,
       state.orientation.w);
-
       vrrenderer.render(scene, camera);
     }
 
-  /** Enter fullscreen mode **/
-  window.addEventListener("keypress", function(e) {
+    /** Enter fullscreen mode **/
+    window.addEventListener("keypress", function(e) {
     if (e.charCode == 'f'.charCodeAt(0)) {
       try
       {
@@ -115,7 +125,6 @@
       }
     }, false);
   </script>
-
   <script src="VRRenderer.js"></script>
 
 </head>
